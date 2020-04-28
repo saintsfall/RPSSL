@@ -21,12 +21,10 @@
     }
   },
   "lint-staged": {
-    "linters": {
-      "**/*.js": [
-        "prettier-standard --lint",
-        "git add"
-      ]
-    }
+    "*.js": [
+      "prettier-standard --lint",
+      "git add"
+    ]
   },
   "license": "MIT",
   "devDependencies": {
