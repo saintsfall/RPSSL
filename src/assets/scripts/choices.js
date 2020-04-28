@@ -1,34 +1,14 @@
-const judge = function (playerChoice, enemyChoice) {
-  const win = playerChoice.wins.find(enemy => {
-    return enemy.name === enemyChoice.name;
-  });
-
-  if (win) {
-    return win.message;
-  }
-
-  const loose = enemyChoice.wins.find(player => {
-    return player.name === playerChoice.name;
-  });
-
-  if (loose) {
-    return loose.message;
-  }
-
-  return 'Empatou essa caralha!!!';
-}
-
 const choices = {
   rock: {
     name: 'rock',
     wins: [
       {
         name: 'lizard',
-        message: 'rock crushes lizard',
+        message: 'rock crushes lizard'
       },
       {
-        name: 'scissor',
-        message: 'rock smashes scissor'
+        name: 'scissors',
+        message: 'rock smashes scissors'
       }
     ]
   },
@@ -37,7 +17,7 @@ const choices = {
     wins: [
       {
         name: 'rock',
-        message: 'paper cover rock',
+        message: 'paper cover rock'
       },
       {
         name: 'spock',
@@ -89,5 +69,27 @@ const choices = {
   }
 }
 
-console.log(judge(choices['spock'], choices['paper']));
+const judge = function (choice1, choice2) {
+  const playerChoice = choices[choice1]
+  const enemyChoice = choices[choice2]
 
+  const win = playerChoice.wins.find(enemy => {
+    return enemy.name === enemyChoice.name
+  })
+
+  if (win) {
+    return win.message
+  }
+
+  const loose = enemyChoice.wins.find(player => {
+    return player.name === playerChoice.name
+  })
+
+  if (loose) {
+    return loose.message
+  }
+
+  return 'Empatou essa caralha!!!'
+}
+
+export default judge
