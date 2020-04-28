@@ -1,0 +1,48 @@
+{
+  "name": "rpssl",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/saintsfall/RPSSL.git",
+  "author": "",
+  "contribuitors": [
+    "Daniel Simão <simaodeveloper@gmail.com> (https://danielsimao.com.br)",
+    "Caio Santos <caio.f.santos@icloud.com>"
+  ],
+  "scripts": {
+    "precommit": "lint-staged",
+    "start": "yarn run clear && webpack --mode production",
+    "dev": "yarn run clear && webpack-dev-server --open",
+    "clear": "rm -rf ./dist"
+  },
+  "lint-staged": {
+    "linters": {
+      "./src/**/*.js": [
+        "prettier-standard --lint",
+        "git add"
+      ]
+    }
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.8.0",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@babel/polyfill": "^7.8.3",
+    "@babel/preset-env": "^7.8.2",
+    "@babel/register": "^7.8.0",
+    "babel-loader": "^8.0.6",
+    "commitlint": "^8.3.5",
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^3.5.3",
+    "file-loader": "^6.0.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.7",
+    "mini-css-extract-plugin": "^0.9.0",
+    "prettier-standard": "^16.3.0",
+    "sass": "^1.24.4",
+    "sass-loader": "^8.0.2",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
