@@ -14,9 +14,15 @@
     "dev": "yarn run clear && webpack-dev-server --open",
     "clear": "rm -rf ./dist"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "lint-staged": {
     "linters": {
-      "./src/**/*.js": [
+      "**/*.js": [
         "prettier-standard --lint",
         "git add"
       ]
