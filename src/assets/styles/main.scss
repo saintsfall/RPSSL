@@ -1,37 +1,4 @@
-body {
-  display: grid;
-  place-items: center;
-  min-height: 100vh;
-
-  font-size: 62.5%;
-}
-
-#app {
-  width: 100%;
-
-  .screen-choices {
-    display: flex;
-    justify-content: space-around;
-    width: inherit;
-
-    button {
-      width: 25%;
-      padding: 0.5em;
-      border: 1px solid transparent;
-      font-size: 2rem;
-      color: #fff;
-      background-color: #000;
-
-      outline: none;
-
-      transition: 0.2s ease-in-out;
-      cursor: pointer;
-
-      &:hover {
-        background-color: #fff;
-        color: #000;
-        border-color: #000;
-      }
-    }
-  }
-}
+@import "./base/base-dir";
+@import "./abstracts/abstracts-dir";
+@import "./components/components-dir";
+@import "./layouts/layouts-dir";
